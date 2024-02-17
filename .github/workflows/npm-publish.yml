@@ -9,7 +9,7 @@ on:
     types: [created]
 
 jobs:
-  cache-and-install:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: https://registry.npmjs.org/
 
       - uses: pnpm/action-setup@v3
         name: Install pnpm
@@ -40,18 +41,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Install dependencies 📦️
+        run: pnpm install --frozen-lockfile
 
-  publish-npm:
-    needs: cache-and-install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org/
       - run: pnpm ci
       - run: pnpm test
       - run: pnpm publish
