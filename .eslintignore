@@ -1,0 +1,23 @@
+/.git
+/.yarn
+/benchmark/**/dist
+/coverage
+/packages/mui-symbols-material/fixtures
+/packages/mui-symbols-material/legacy
+/packages/mui-symbols-material/lib
+/packages/mui-symbols-material/material-icons/
+/packages/mui-symbols-material/src/*.js
+/packages/mui-symbols-material/templateSvgIcon.js
+# Ignore fixtures
+/tmp
+.next
+build
+node_modules
+.nyc_output
+pnpm-lock.yaml
+
+# These come from crowdin.
+# If we would commit changes crowdin would immediately try to revert.
+# If we want to format these files we'd need to do it in crowdin
+docs/**/*-pt.md
+docs/**/*-zh.md

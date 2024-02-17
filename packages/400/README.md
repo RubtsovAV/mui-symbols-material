@@ -5,7 +5,7 @@
 
 # mui-symbols-material
 
-This package provides the Google [Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols) converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
+This package provides the Google [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
 
 ## Installation
 
@@ -32,7 +32,7 @@ npm install @mui/material
 <!-- #default-branch-switch -->
 
 - [The SvgIcon documentation](https://mui.com/material-ui/icons/#svgicon)
-- [The Material Design symbols search](https://fonts.google.com/icons?icon.set=Material+Symbols)
+- [The Material Design symbols search](https://fonts.google.com/icons)
 
 ## Contributing
 
@@ -41,5 +41,5 @@ Therefore, we don't accept fixes, additions, or any other contributions that wou
 
 To synchronize with Material Icons, do the following:
 
-1. Inside the root run `pnpm download`
-2. Inside the root run `pnpm build`
+1. Inside this workspace run `pnpm src:download`
+2. Inside this workspace run `pnpm src:icons && pnpm build`
