@@ -44,7 +44,7 @@
     "typescript:ci": "lerna run --concurrency 5 --no-bail --no-sort typescript",
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
-    "ci": "pnpm src:download && pnpm src:icons && pnpm build",
+    "build:ci": "pnpm src:download && pnpm src:icons && pnpm build",
     "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\""
   },
   "dependencies": {},

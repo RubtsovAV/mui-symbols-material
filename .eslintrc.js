@@ -31,7 +31,6 @@ module.exports = {
     ecmaVersion: 7,
   },
   plugins: [
-    'eslint-plugin-material-ui',
     'eslint-plugin-react-hooks',
     '@typescript-eslint/eslint-plugin',
     'eslint-plugin-filenames',

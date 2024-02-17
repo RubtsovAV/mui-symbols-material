@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies 📦️
         run: pnpm install --frozen-lockfile
 
-      - run: pnpm ci
+      - run: pnpm build:ci
       - run: pnpm test
       - run: pnpm publish
         env:
