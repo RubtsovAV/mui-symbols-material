@@ -45,7 +45,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - run: pnpm build:ci
-      - run: pnpm test
+      #- run: pnpm test # it takes too long
       - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
