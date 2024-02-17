@@ -27,8 +27,9 @@
     "preinstall": "npx only-allow pnpm",
     "proptypes": "tsx ./scripts/generateProptypes.ts",
     "deduplicate": "pnpm dedupe",
-    "download": "pnpm -C packages/mui-symbols-material src:download",
-    "build": "pnpm -C packages/mui-symbols-material src:icons && pnpm -C packages/mui-symbols-material build",
+    "src:download": "lerna run --scope \"@mui-symbols-material/*\" src:download",
+    "src:icons": "lerna run --scope \"@mui-symbols-material/*\" src:icons",
+    "build": "lerna run --scope \"@mui-symbols-material/*\" build",
     "eslint": "eslint . --cache --report-unused-disable-directives --ext .js,.ts,.tsx --max-warnings 0",
     "eslint:ci": "eslint . --report-unused-disable-directives --ext .js,.ts,.tsx --max-warnings 0",
     "stylelint": "stylelint --reportInvalidScopeDisables --reportNeedlessDisables \"docs/**/*.{js,ts,tsx}\"",
@@ -38,13 +39,15 @@
     "size:why": "pnpm size:snapshot --analyze",
     "test": "node scripts/test.mjs",
     "tc": "node test/cli.js",
+    "test:extended": "pnpm eslint && pnpm typescript",
     "typescript": "lerna run --no-bail --parallel typescript",
     "typescript:ci": "lerna run --concurrency 5 --no-bail --no-sort typescript",
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
-    "generate-codeowners": "node scripts/generateCodeowners.mjs"
+    "generate-codeowners": "node scripts/generateCodeowners.mjs",
+    "ci": "pnpm src:download && pnpm src:icons && pnpm build",
+    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\""
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@argos-ci/core": "^1.5.3",
     "@babel/cli": "^7.23.9",

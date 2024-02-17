@@ -308,7 +308,7 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
 
-  packages/mui-symbols-material:
+  packages/400:
     dependencies:
       '@babel/runtime':
         specifier: ^7.23.9
