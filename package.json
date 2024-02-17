@@ -16,14 +16,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mui/material-ui.git",
-    "directory": "packages/mui-icons-material"
+    "url": "https://github.com/RubtsovAV/mui-symbols-material"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mui/material-ui/issues"
+    "url": "https://github.com/RubtsovAV/mui-symbols-material/issues"
   },
-  "homepage": "https://mui.com/material-ui/material-icons/",
+  "homepage": "https://github.com/RubtsovAV/mui-symbols-material",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "proptypes": "tsx ./scripts/generateProptypes.ts",
