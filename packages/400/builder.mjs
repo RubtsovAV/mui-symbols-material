@@ -271,24 +271,6 @@ export async function handler(options) {
   queue.push(svgPaths);
   await queue.wait({ empty: true });
 
-  let legacyFiles = await globAsync(normalizePath(path.join(currentDirectory, '/legacy', '*.js')));
-  legacyFiles = legacyFiles.map((file) => path.basename(file));
-  let generatedFiles = await globAsync(normalizePath(path.join(options.outputDir, '*.js')));
-  generatedFiles = generatedFiles.map((file) => path.basename(file));
-
-  const duplicatedIconsLegacy = intersection(legacyFiles, generatedFiles);
-  if (duplicatedIconsLegacy.length > 0) {
-    throw new Error(
-      `Duplicated icons in legacy folder. Either \n` +
-        `1. Remove these from the /legacy folder\n` +
-        `2. Add them to the blacklist to keep the legacy version\n` +
-        `The following icons are duplicated: \n${duplicatedIconsLegacy.join('\n')}`,
-    );
-  }
-
-  await fse.copy(path.join(currentDirectory, '/legacy'), options.outputDir);
-  await fse.copy(path.join(currentDirectory, '/custom'), options.outputDir);
-
   await generateIndex(options);
 }
 
