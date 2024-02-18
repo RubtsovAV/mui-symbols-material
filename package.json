@@ -27,6 +27,7 @@
     "preinstall": "npx only-allow pnpm",
     "proptypes": "tsx ./scripts/generateProptypes.ts",
     "deduplicate": "pnpm dedupe",
+    "clean": "lerna run --scope \"@mui-symbols-material/*\" clean",
     "src:download": "lerna run --scope \"@mui-symbols-material/*\" src:download",
     "src:icons": "lerna run --scope \"@mui-symbols-material/*\" src:icons",
     "build": "lerna run --scope \"@mui-symbols-material/*\" build",
