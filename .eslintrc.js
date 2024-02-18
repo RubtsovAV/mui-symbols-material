@@ -1,16 +1,6 @@
 const path = require('path');
 const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
 
-const forbidTopLevelMessage = [
-  'Prefer one level nested imports to avoid bundling everything in dev mode',
-  'See https://github.com/mui/material-ui/pull/24147 for the kind of win it can unlock.',
-].join('\n');
-// This only applies to packages published from this monorepo.
-// If you build a library around `@mui/material` you can safely use `createStyles` without running into the same issue as we are.
-const forbidCreateStylesMessage =
-  'Use `MuiStyles<ClassKey, Props>` instead if the styles are exported. Otherwise use `as const` assertions. ' +
-  '`createStyles` will lead to inlined, at-compile-time-resolved type-imports. ' +
-  'See https://github.com/microsoft/TypeScript/issues/36097#issuecomment-578324386 for more information';
 
 module.exports = {
   root: true, // So parent files don't get applied
@@ -120,12 +110,6 @@ module.exports = {
     // We are a library, we need to support it too
     'jsx-a11y/no-autofocus': 'off',
 
-    'material-ui/docgen-ignore-before-comment': 'error',
-    'material-ui/rules-of-use-theme-variants': 'error',
-    'material-ui/no-empty-box': 'error',
-    'material-ui/no-styled-box': 'error',
-    'material-ui/straight-quotes': 'error',
-
     'react-hooks/exhaustive-deps': ['error', { additionalHooks: 'useEnhancedEffect' }],
     'react-hooks/rules-of-hooks': 'error',
 
@@ -219,7 +203,6 @@ module.exports = {
       rules: {
         // does not work with wildcard imports. Mistakes will throw at runtime anyway
         'import/named': 'off',
-        'material-ui/disallow-active-element-as-key-event-target': 'error',
 
         // upgraded level from recommended
         'mocha/no-exclusive-tests': 'error',
@@ -258,15 +241,6 @@ module.exports = {
         // that they don't need type-checking
         'react/prop-types': 'off',
         'react/no-unused-prop-types': 'off',
-      },
-    },
-    {
-      files: ['docs/src/modules/components/**/*.js'],
-      rules: {
-        'material-ui/no-hardcoded-labels': [
-          'error',
-          { allow: ['MUI', 'X', 'GitHub', 'Stack Overflow'] },
-        ],
       },
     },
     // Next.js plugin
@@ -353,28 +327,6 @@ module.exports = {
       rules: {
         'no-restricted-imports': [
           'error',
-          {
-            paths: [
-              {
-                name: '@mui/material/styles',
-                importNames: ['createStyles'],
-                message: forbidCreateStylesMessage,
-              },
-              {
-                name: '@mui/styles',
-                importNames: ['createStyles'],
-                message: forbidCreateStylesMessage,
-              },
-              {
-                name: '@mui/styles/createStyles',
-                message: forbidCreateStylesMessage,
-              },
-            ],
-            patterns: [
-              // Allow deeper imports for TypeScript types. TODO?
-              '@mui/*/*/*/*',
-            ],
-          },
         ],
         'react/prop-types': 'off',
       },
@@ -424,36 +376,16 @@ module.exports = {
       rules: {
         'no-restricted-imports': [
           'error',
-          {
-            paths: [
-              {
-                name: '@mui/material',
-                message: forbidTopLevelMessage,
-              },
-              {
-                name: '@mui/lab',
-                message: forbidTopLevelMessage,
-              },
-            ],
-          },
+          
         ],
         'import/no-cycle': ['error', { ignoreExternal: true }],
       },
     },
     {
       files: ['packages/*/src/**/*{.ts,.tsx,.js}'],
-      excludedFiles: ['*.d.ts', '*.spec.ts', '*.spec.tsx', 'packages/mui-joy/**/*{.ts,.tsx,.js}'],
+      excludedFiles: ['*.d.ts', '*.spec.ts', '*.spec.tsx'],
       rules: {
-        'material-ui/mui-name-matches-component-name': [
-          'error',
-          {
-            customHooks: [
-              'useDatePickerDefaultizedProps',
-              'useDateTimePickerDefaultizedProps',
-              'useTimePickerDefaultizedProps',
-            ],
-          },
-        ],
+        
       },
     },
     {

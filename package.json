@@ -1,7 +1,7 @@
 {
   "name": "mui-symbols-material",
   "version": "0.0.1",
-  "private": false,
+  "private": true,
   "author": "Aleksandr Rubtsov",
   "description": "Material Design symbols distributed as SVG React components.",
   "main": "./src/index.js",
@@ -45,7 +45,7 @@
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
     "build:ci": "pnpm src:download && pnpm src:icons && pnpm build",
-    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\""
+    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\" --force --no-git-checks"
   },
   "dependencies": {},
   "devDependencies": {

@@ -46,6 +46,6 @@ jobs:
 
       - run: pnpm build:ci
       #- run: pnpm test # it takes too long
-      - run: pnpm publish
+      - run: pnpm release:publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

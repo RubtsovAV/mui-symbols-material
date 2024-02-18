@@ -14,7 +14,7 @@ Install the package in your project directory with:
 <!-- #default-branch-switch -->
 
 ```bash
-npm install @mui-symbols-material/400
+npm install @mui-symbols-material/w400
 ```
 <!-- #default-branch-switch -->
 
@@ -41,7 +41,7 @@ import {
   FavoriteFilledOutlined, 
   FavoriteFilledRounded, 
   FavoriteFilledSharp,
-} from '@mui-symbols-material/400'; // Replace 400 with your desired weight
+} from '@mui-symbols-material/w400'; // Replace 400 with your desired weight
 
 /**
  * Renders all variants of the favorite icon from Material Symbols.

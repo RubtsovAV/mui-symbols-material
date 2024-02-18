@@ -3,10 +3,9 @@
   <a href="https://mui.com/core/" rel="noopener" target="_blank"><img width="150" height="133" src="https://mui.com/static/logo.svg" alt="MUI Core logo"></a>
 </p>
 
-# @mui-symbols-material/400
+# @mui-symbols-material/w400
 
 This package provides the Google [Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols) with weight 400 converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
-
 
 ## Installation
 
@@ -15,7 +14,7 @@ Install the package in your project directory with:
 <!-- #default-branch-switch -->
 
 ```bash
-npm install @mui-symbols-material/400
+npm install @mui-symbols-material/w400
 ```
 <!-- #default-branch-switch -->
 
@@ -42,7 +41,7 @@ import {
   FavoriteFilledOutlined, 
   FavoriteFilledRounded, 
   FavoriteFilledSharp,
-} from '@mui-symbols-material/400'; // Replace 400 with your desired weight
+} from '@mui-symbols-material/w400'; // Replace 400 with your desired weight
 
 /**
  * Renders all variants of the favorite icon from Material Symbols.
