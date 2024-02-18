@@ -6,7 +6,10 @@ name: Publish to NPM
 on:
   workflow_dispatch:
   release:
-    types: [created]
+    types: [created] # This workflow will only run when a new release is created not by GitHub Actions
+  push:
+    tags:
+      - 'v*.*.*' 
 
 jobs:
   release:

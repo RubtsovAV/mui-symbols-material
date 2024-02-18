@@ -79,7 +79,7 @@ try {
 
   if (shouldPush) {
     console.log('Pushing changes and tags to remote...');
-    execSync('git push --follow-tags', { stdio: 'inherit' });
+    execSync('git push && git push --tags', { stdio: 'inherit' });
   }
 
   console.log(`Successfully bumped version to ${newVersion}.`);
