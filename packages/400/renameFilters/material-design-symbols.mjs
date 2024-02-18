@@ -39,7 +39,7 @@ export default function myDestRewriter(svgPathObj) {
   
   fileName = snakeToCamel(fileName)
     .replace(/\.svg$/, '')
-    .replace(/\-fill$/, 'Filled');
+    .replace(/Fill$/, 'Filled');
 
   fileName += theme.charAt(0).toUpperCase() + theme.substring(1);
   fileName += '.js';
