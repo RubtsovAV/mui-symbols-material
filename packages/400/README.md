@@ -3,9 +3,9 @@
   <a href="https://mui.com/core/" rel="noopener" target="_blank"><img width="150" height="133" src="https://mui.com/static/logo.svg" alt="MUI Core logo"></a>
 </p>
 
-# mui-symbols-material
+# @mui-symbols-material/400
 
-This package provides the Google [Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols) converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
+This package provides the Google [Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols) with weight 400 converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
 
 
 ## Installation
