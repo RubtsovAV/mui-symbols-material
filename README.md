@@ -60,6 +60,35 @@ function MyComponent() {
 }
 ```
 
+## Available Weights
+
+The following weights are available, providing a range of design options:
+
+   - @mui-symbols-material/w100
+   - @mui-symbols-material/w200
+   - @mui-symbols-material/w300
+   - @mui-symbols-material/w400
+   - @mui-symbols-material/w500
+   - @mui-symbols-material/w600
+   - @mui-symbols-material/w700
+
+Once installed, you can use the icons in your React components. Here's an example showing how to use icons of two different weights:
+
+```jsx
+import React from 'react';
+import { FavoriteOutlined as FavoriteRegular } from '@mui-symbols-material/w400'; // Regular weight
+import { FavoriteOutlined as FavoriteBold } from '@mui-symbols-material/w700'; // Bold weight
+
+function MyComponent() {
+  return (
+    <div>
+      <FavoriteRegular /> {/* Regular weight icon */}
+      <FavoriteBold /> {/* Bold weight icon */}
+    </div>
+  );
+}
+```
+
 ## Styles
 
 1. **Outlined**: These icons have a distinct outline, providing a clear and crisp appearance.
@@ -69,10 +98,6 @@ function MyComponent() {
 ## Filled Version
 
 Each icon also comes in a filled version, providing a different aesthetic and allowing for greater versatility in their usage.
-
-## Weights
-
-Icons are available in multiple weights (100, 200, ..., 700), providing flexibility in design and emphasis.
 
 ## Design Specifications
 
