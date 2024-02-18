@@ -44,8 +44,9 @@
     "typescript:ci": "lerna run --concurrency 5 --no-bail --no-sort typescript",
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
-    "build:ci": "pnpm src:download && pnpm src:icons && pnpm build",
-    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\" --force --no-git-checks"
+    "release:version": "node scripts/bumpVersion.js",
+    "release:build": "pnpm src:download && pnpm src:icons && pnpm build",
+    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\""
   },
   "dependencies": {},
   "devDependencies": {
@@ -166,6 +167,9 @@
     "@types/react-dom": "18.2.19",
     "cross-fetch": "^4.0.0"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "nyc": {
     "include": [
       "packages/mui*/src/**/*.{js,ts,tsx}"
