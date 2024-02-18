@@ -47,7 +47,7 @@
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
     "release:version": "node scripts/bumpVersion.js",
     "release:build": "pnpm src:download && pnpm src:icons && pnpm build",
-    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\""
+    "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\" --no-git-checks"
   },
   "dependencies": {},
   "devDependencies": {
