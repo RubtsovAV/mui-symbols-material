@@ -1,12 +1,12 @@
 'use client';
 import * as React from 'react';
-import SvgIcon, {SvgIconProps} from '@mui/material';
+import {SvgIcon, SvgIconProps} from '@mui/material';
 
 /**
  * @source https://github.com/mui/material-ui/packages/mui-material/src/utils/createSvgIcon.js
  */
 export default function createSvgIcon(path: React.ReactNode, displayName: string, defaultProps: Partial<SvgIconProps> = {}) {
-  function Component(props: SvgIconProps, ref: React.ForwardedRef<typeof SvgIcon>) {
+  function Component(props: SvgIconProps, ref: React.ForwardedRef<SVGSVGElement>) {
     return (
       <SvgIcon data-testid={`${displayName}Icon`} ref={ref} {...defaultProps} {...props}>
         {path}
