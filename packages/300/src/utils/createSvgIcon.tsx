@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import {SvgIcon, SvgIconProps} from '@mui/material';
+import SvgIcon, {SvgIconProps} from '@mui/material/SvgIcon';
 
 /**
  * @source https://github.com/mui/material-ui/packages/mui-material/src/utils/createSvgIcon.js
