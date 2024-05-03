@@ -49,10 +49,9 @@ jobs:
 
       - run: pnpm release:build
       #- run: pnpm test # it takes too long
-      # disable to publish only initial version of esm 
-      #- run: pnpm release:publish
-      #  env:
-      #    NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: pnpm release:publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
       # build and publish pure esm version (without CommonJS)
       - run: pnpm build:pure-esm
