@@ -107,6 +107,10 @@ export async function createPackageFile({isEsm = false} = {}) {
   if (isEsm) {
     newPackageData.name += '-esm';
     newPackageData.type = "module";
+    
+    const packageDataWithName = JSON.parse(packageData);
+    packageDataWithName.name = newPackageData.name;
+    await fse.writeFile(sourcePath, JSON.stringify(packageDataWithName, null, 2), 'utf8');
   }
 
   const typeDefinitionsFilePath = path.resolve(buildPath, './index.d.ts');
@@ -116,7 +120,7 @@ export async function createPackageFile({isEsm = false} = {}) {
 
   const targetPath = path.resolve(buildPath, './package.json');
 
-  await fse.writeFile(sourcePath, JSON.stringify(newPackageData, null, 2), 'utf8');
+  
   await fse.writeFile(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
   console.log(`Created package.json in ${targetPath}`);
 
