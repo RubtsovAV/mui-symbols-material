@@ -45,11 +45,17 @@ async function addLicense(packageData) {
 
 async function run() {
   const extraFiles = process.argv.slice(2);
+  let isEsm = false;
+  if (extraFiles[0] === '--esm') {
+    extraFiles.shift();
+    isEsm = true;
+    console.log(`ESM type enabled`);
+  }
   try {
     // TypeScript
     await typescriptCopy({ from: srcPath, to: buildPath });
 
-    const packageData = await createPackageFile();
+    const packageData = await createPackageFile({isEsm});
 
     await Promise.all(
       ['./README.md', '../../LICENSE', ...extraFiles].map((file) =>

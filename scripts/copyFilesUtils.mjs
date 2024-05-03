@@ -83,7 +83,7 @@ export async function typescriptCopy({ from, to }) {
   return Promise.all(cmds);
 }
 
-export async function createPackageFile() {
+export async function createPackageFile({isEsm = false} = {}) {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
   const { nyc, scripts, devDependencies, workspaces, ...packageDataOther } =
     JSON.parse(packageData);
@@ -102,6 +102,11 @@ export async function createPackageFile() {
         }
       : {}),
   };
+
+  if (isEsm) {
+    newPackageData.name += '-esm';
+    newPackageData.type = "module";
+  }
 
   const typeDefinitionsFilePath = path.resolve(buildPath, './index.d.ts');
   if (await fse.pathExists(typeDefinitionsFilePath)) {

@@ -28,7 +28,8 @@
   "homepage": "https://github.com/RubtsovAV/mui-symbols-material",
   "scripts": {
     "clean": "rimraf build lib material-symbols/* && rm -f src/*.js",
-    "build": "shx cp -r lib/ build/ && pnpm build:typings && pnpm build:copy-files",
+    "build:pure-esm": "pnpm prebuild && shx cp -r lib/esm build/ && pnpm build:typings && pnpm build:copy-files --esm",
+    "build": "pnpm prebuild && shx cp -r lib/ build/ && pnpm build:typings && pnpm build:copy-files",
     "build:lib": "pnpm build:node && pnpm build:stable",
     "build:lib:clean": "rimraf lib/ && pnpm build:lib",
     "build:legacy": "echo 'Skip legacy build'",
