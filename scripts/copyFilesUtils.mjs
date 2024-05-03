@@ -84,7 +84,8 @@ export async function typescriptCopy({ from, to }) {
 }
 
 export async function createPackageFile({isEsm = false} = {}) {
-  const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
+  const sourcePath = path.resolve(packagePath, './package.json');
+  const packageData = await fse.readFile(sourcePath, 'utf8');
   const { nyc, scripts, devDependencies, workspaces, ...packageDataOther } =
     JSON.parse(packageData);
 
@@ -115,6 +116,7 @@ export async function createPackageFile({isEsm = false} = {}) {
 
   const targetPath = path.resolve(buildPath, './package.json');
 
+  await fse.writeFile(sourcePath, JSON.stringify(newPackageData, null, 2), 'utf8');
   await fse.writeFile(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
   console.log(`Created package.json in ${targetPath}`);
 
