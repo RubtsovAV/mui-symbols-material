@@ -52,3 +52,9 @@ jobs:
       - run: pnpm release:publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+      # build and publish pure esm version (without CommonJS)
+      - run: pnpm build:pure-esm
+      - run: pnpm release:publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
