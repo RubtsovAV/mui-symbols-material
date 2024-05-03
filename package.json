@@ -31,6 +31,7 @@
     "src:download": "lerna run --scope \"@mui-symbols-material/*\" src:download --parallel",
     "src:icons": "lerna run --scope \"@mui-symbols-material/*\" src:icons --parallel",
     "build": "lerna run --scope \"@mui-symbols-material/*\" build --parallel",
+    "build:pure-esm": "lerna run --scope \"@mui-symbols-material/*\" build:pure-esm --parallel",
     "eslint": "eslint . --cache --report-unused-disable-directives --ext .js,.ts,.tsx --max-warnings 0",
     "eslint:ci": "eslint . --report-unused-disable-directives --ext .js,.ts,.tsx --max-warnings 0",
     "stylelint": "stylelint --reportInvalidScopeDisables --reportNeedlessDisables \"docs/**/*.{js,ts,tsx}\"",
