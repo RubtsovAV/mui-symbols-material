@@ -58,6 +58,9 @@ export default function myDestRewriter(svgPathObj) {
     return `ThreeP${fileName.slice(2)}`;
   }
 
+  if (fileName.startsWith('24fps')) {
+    return `TwentyFourFps${fileName.slice(5)}`;
+  }
   if (fileName.startsWith('30fps')) {
     return `ThirtyFps${fileName.slice(5)}`;
   }
