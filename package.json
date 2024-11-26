@@ -46,6 +46,8 @@
     "typescript:ci": "lerna run --concurrency 5 --no-bail --no-sort typescript",
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
+    "checkchanges": "npm run download:metadata -- --status",
+    "download:metadata": "npx @material-design-icons/scripts download metadata --symbols",
     "release:version": "node scripts/bumpVersion.js",
     "release:build": "pnpm src:download && pnpm src:icons && pnpm build",
     "release:publish": "pnpm publish --recursive --tag latest --filter \"@mui-symbols-material/*\" --no-git-checks"
@@ -68,6 +70,7 @@
     "@babel/preset-typescript": "^7.23.3",
     "@babel/register": "^7.23.7",
     "@mnajdova/enzyme-adapter-react-18": "^0.2.0",
+    "@material-design-icons/scripts": "0.5.2",
     "@next/eslint-plugin-next": "^14.1.0",
     "@octokit/rest": "^20.0.2",
     "@playwright/test": "1.41.2",
