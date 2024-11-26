@@ -143,7 +143,8 @@ function MyComponent() {
 This icon set is meant to be in sync with Google's Material Symbols.
 Therefore, we don't accept fixes, additions, or any other contributions that would make this package diverge from the source.
 
-To synchronize with Material Icons, do the following:
+To synchronize with Material Symbols, do the following:
 
-1. Inside the root run `pnpm download`
-2. Inside the root run `pnpm build`
+1. Inside the root run `pnpm src:download`
+2. Inside the root run `pnpm src:icons`
+3. Inside the root run `pnpm build`
