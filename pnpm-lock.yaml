@@ -314,7 +314,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -373,7 +373,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -432,7 +432,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -491,7 +491,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -550,7 +550,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -609,7 +609,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
@@ -668,7 +668,7 @@ importers:
         specifier: ^7.23.9
         version: 7.23.9
       '@mui/material':
-        specifier: ^5.0.0
+        specifier: ^5.0.0 || ^6.0.0
         version: 5.15.4(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@material-design-icons/scripts':
