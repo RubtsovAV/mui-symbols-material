@@ -7,7 +7,7 @@
 
 # mui-symbols-material
 
-:information_source: **Compatible with Material-UI v6**
+:information_source: **Compatible with Material-UI v6 & v5**
 
 This package provides the Google [Material Symbols](https://fonts.google.com/icons?icon.set=Material+Symbols) converted to [`SvgIcon`](https://mui.com/material-ui/api/svg-icon/) components.
 
