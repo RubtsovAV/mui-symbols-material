@@ -46,6 +46,7 @@
     "typescript:ci": "lerna run --concurrency 5 --no-bail --no-sort typescript",
     "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts",
     "generate-codeowners": "node scripts/generateCodeowners.mjs",
+    "sync-packages": "node scripts/syncPackages.js",
     "checkchanges": "npm run download:metadata -- --status",
     "download:metadata": "npx @material-design-icons/scripts download metadata --symbols",
     "release:version": "node scripts/bumpVersion.js",
